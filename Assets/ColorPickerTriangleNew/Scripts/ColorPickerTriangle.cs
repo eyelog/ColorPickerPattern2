@@ -7,7 +7,7 @@ public class ColorPickerTriangle : MonoBehaviour {
 
     const float MainRadius = .8f;
     const float CRadius = .5f;
-    const float CWidth = .1f;
+    const float CWidth = .5f;
     const float TRadius = .4f;
 
     public GameObject Triangle;
