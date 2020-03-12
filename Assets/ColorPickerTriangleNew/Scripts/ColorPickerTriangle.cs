@@ -5,8 +5,8 @@ public class ColorPickerTriangle : MonoBehaviour {
 
     public Color TheColor = Color.cyan;
 
-    const float MainRadius = .8f;
-    const float CRadius = .5f;
+    const float MainRadius = 1.4f;
+    const float CRadius = .6f;
     const float CWidth = .5f;
     const float TRadius = .4f;
 
@@ -29,7 +29,7 @@ public class ColorPickerTriangle : MonoBehaviour {
 	void Awake () {
         float h, s, v;
         Color.RGBToHSV(TheColor, out h, out s, out v);
-        Debug.Log("HSV = " + v.ToString() + "," + h.ToString() + "," + v.ToString() + ", color = " + TheColor.ToString());
+        //Debug.Log("HSV = " + v.ToString() + "," + h.ToString() + "," + v.ToString() + ", color = " + TheColor.ToString());
         MyPlane = new Plane(transform.TransformDirection(Vector3.forward), transform.position);
         RPoints = new Vector3[3];
         SetTrianglePoints();
@@ -82,13 +82,16 @@ public class ColorPickerTriangle : MonoBehaviour {
 
     private bool HasIntersection()
     {
-        Debug.Log("HasIntersection");
+        //Debug.Log("HasIntersection");
         MyPlane = new Plane(transform.TransformDirection(Vector3.forward), transform.position);
+        // Тут получаем позицию нажатия на экран
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        //Debug.Log("Ray x = " + ray.direction.x + ", y = " + ray.direction.y);
         float rayDistance;
         if (MyPlane.Raycast(ray, out rayDistance))
         {
             Vector3 p = ray.GetPoint(rayDistance);
+            Debug.Log("Distance = " + Vector3.Distance(p, transform.position));
             if (Vector3.Distance(p, transform.position) > MainRadius)
                 return false;
             CurLocalPos = transform.worldToLocalMatrix.MultiplyPoint(p);
@@ -100,7 +103,7 @@ public class ColorPickerTriangle : MonoBehaviour {
 
     public void SetNewColor(Color NewColor)
     {
-        Debug.Log("SetNewColor color = " + NewColor.ToString());
+        //Debug.Log("SetNewColor color = " + NewColor.ToString());
         TheColor = NewColor;
         float h, s, v;
         Color.RGBToHSV(TheColor, out h, out s, out v);
@@ -116,6 +119,8 @@ public class ColorPickerTriangle : MonoBehaviour {
 
     private void CheckCirclePosition()
     {
+        //Debug.Log("CheckCirclePosition color = " + CircleColor.ToString());
+
         if (Mathf.Abs(CurLocalPos.magnitude - CRadius) > CWidth / 2f && !DragCircle)
             return;
 
@@ -128,13 +133,13 @@ public class ColorPickerTriangle : MonoBehaviour {
         PointerMain.transform.localEulerAngles = Vector3.back * a;
         DragCircle = !DragTriangle;
         SetColor();
-        Debug.Log("CheckCirclePosition color = " + CircleColor.ToString());
+        //Debug.Log("CheckCirclePosition color = " + CircleColor.ToString());
     }
 
     private void CheckTrianglePosition()
     {
         Vector3 b = Barycentric(CurLocalPos, RPoints[0], RPoints[1], RPoints[2]);
-        Debug.Log("CheckTrianglePosition color = " + b.ToString());
+        //Debug.Log("CheckTrianglePosition color = " + b.ToString());
         if (b.x >= 0f && b.y >= 0f && b.z >= 0f)
         {
             CurBary = b;
@@ -152,7 +157,7 @@ public class ColorPickerTriangle : MonoBehaviour {
         TheColor = c;
         TheColor.a = 1f;
 
-        Debug.Log("SetColor color = " + TheColor.ToString());
+        //Debug.Log("SetColor color = " + TheColor.ToString());
     }
 
     private void ChangeTriangleColor(Color c)
@@ -163,7 +168,7 @@ public class ColorPickerTriangle : MonoBehaviour {
         colors[2] = Color.white;
         TMesh.colors = colors;
 
-        Debug.Log("ChangeTriangleColor color = " + TMesh.ToString());
+        //Debug.Log("ChangeTriangleColor color = " + TMesh.ToString());
     }
 
     private Vector3 Barycentric(Vector3 p, Vector3 a, Vector3 b, Vector3 c)
