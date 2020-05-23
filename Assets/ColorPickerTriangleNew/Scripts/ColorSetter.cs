@@ -6,27 +6,33 @@ using UnityEngine.UI;
 public class ColorSetter : MonoBehaviour
 {
 
-    private Text[] myItems;
-    private ColorPickerTriangle CP;
+    private Image itemPanel;
+    private Text[] itemsText;
+    private Text[] itemsButton;
+    public ColorPickerTriangle cpPanel;
+    public ColorPickerTriangle cpText;
+    public ColorPickerTriangle cpButton;
 
-    // Start is called before the first frame update
+    //public GameObject ColoringObject;
+
     void Start()
     {
+        itemPanel = GameObject.FindGameObjectWithTag("Panel").GetComponent<Image>();
+        itemsText = FindObjectsOfType(typeof(Text)) as Text[];
 
-        Debug.Log("ColorSetter started ");
-
-        myItems = FindObjectsOfType(typeof(Text)) as Text[];
-        foreach (Text item in myItems)
-        {
-            Debug.Log(item.gameObject.name);
-        }
-
-        CP = ColoringObject.GetComponent<ColorPickerTriangle>();
+        //cpText = ColoringObject.GetComponent<ColorPickerTriangle>();
+        //cpText = ColoringObject.GetComponent<ColorPickerTriangle>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if (Input.anyKey)
+        {
+            itemPanel.color = cpPanel.TheColor;
+            foreach (Text item in itemsText)
+            {
+                item.color = cpText.TheColor;
+            }
+        }
     }
 }

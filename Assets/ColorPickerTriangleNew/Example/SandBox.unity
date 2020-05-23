@@ -132,7 +132,6 @@ GameObject:
   - component: {fileID: 14568909}
   - component: {fileID: 14568912}
   - component: {fileID: 14568911}
-  - component: {fileID: 14568910}
   m_Layer: 5
   m_Name: tvButton
   m_TagString: Untagged
@@ -159,20 +158,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 720, y: 63}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &14568910
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 14568908}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95992cce49f3ea6428df05c44eaf6a17, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ColoringObject: {fileID: 666308372}
-  text: {fileID: 14568911}
 --- !u!114 &14568911
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -188,6 +173,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -953,6 +939,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -985,7 +972,6 @@ GameObject:
   - component: {fileID: 584535374}
   - component: {fileID: 584535376}
   - component: {fileID: 584535375}
-  - component: {fileID: 584535378}
   m_Layer: 5
   m_Name: tvScreen
   m_TagString: Untagged
@@ -1027,6 +1013,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1052,26 +1039,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 584535373}
   m_CullTransparentMesh: 0
---- !u!114 &584535378
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 584535373}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95992cce49f3ea6428df05c44eaf6a17, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ColoringObject: {fileID: 666308372}
-  text: {fileID: 584535375}
 --- !u!1 &666308372 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3866329604163327319, guid: cb2460685f1c83342870c4013d9d3f12,
     type: 3}
   m_PrefabInstance: {fileID: 429473642}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &666308373 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8469724042888747809, guid: cb2460685f1c83342870c4013d9d3f12,
+    type: 3}
+  m_PrefabInstance: {fileID: 429473642}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 666308372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c91b060f1bff4743b6a9402733e13b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!222 &666308374
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1091,7 +1076,6 @@ GameObject:
   - component: {fileID: 671240731}
   - component: {fileID: 671240734}
   - component: {fileID: 671240733}
-  - component: {fileID: 671240732}
   m_Layer: 5
   m_Name: tvTitle
   m_TagString: Untagged
@@ -1118,20 +1102,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -50}
   m_SizeDelta: {x: 720, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &671240732
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 671240730}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95992cce49f3ea6428df05c44eaf6a17, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ColoringObject: {fileID: 666308372}
-  text: {fileID: 671240733}
 --- !u!114 &671240733
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1147,6 +1117,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1183,7 +1154,6 @@ GameObject:
   - component: {fileID: 755496110}
   - component: {fileID: 755496112}
   - component: {fileID: 755496111}
-  - component: {fileID: 755496114}
   m_Layer: 5
   m_Name: tvText
   m_TagString: Untagged
@@ -1225,6 +1195,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1250,20 +1221,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 755496109}
   m_CullTransparentMesh: 0
---- !u!114 &755496114
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 755496109}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95992cce49f3ea6428df05c44eaf6a17, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ColoringObject: {fileID: 666308372}
-  text: {fileID: 755496111}
 --- !u!1 &801942648 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8447484397683067482, guid: 39adb7fba70b62445a4c6dd2e61b9975,
@@ -1411,6 +1368,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38f588a96f5200d43bc7287c0ff56ef2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cpPanel: {fileID: 1073060598}
+  cpText: {fileID: 666308373}
+  cpButton: {fileID: 1386185155}
 --- !u!1 &968934330
 GameObject:
   m_ObjectHideFlags: 0
@@ -1478,6 +1438,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1513,7 +1474,7 @@ GameObject:
   - component: {fileID: 1059004241}
   m_Layer: 5
   m_Name: Panel
-  m_TagString: Untagged
+  m_TagString: Panel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1552,6 +1513,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 0.59836286, b: 0, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1593,6 +1555,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 239829326}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1073060598 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8469724042888747809, guid: cb2460685f1c83342870c4013d9d3f12,
+    type: 3}
+  m_PrefabInstance: {fileID: 239829326}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1073060597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c91b060f1bff4743b6a9402733e13b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!222 &1073060599
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1673,6 +1647,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 189469331}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1386185155 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8469724042888747809, guid: cb2460685f1c83342870c4013d9d3f12,
+    type: 3}
+  m_PrefabInstance: {fileID: 189469331}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1386185154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c91b060f1bff4743b6a9402733e13b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!222 &1386185156
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1749,6 +1735,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 0.59836286, b: 0, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1860,6 +1847,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 867035339}
     m_Modifications:
+    - target: {fileID: 3468832140361360494, guid: 39adb7fba70b62445a4c6dd2e61b9975,
+        type: 3}
+      propertyPath: m_TagString
+      value: Button
+      objectReference: {fileID: 0}
     - target: {fileID: 6029798508595116887, guid: 39adb7fba70b62445a4c6dd2e61b9975,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1969,6 +1961,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: btBackground
+      objectReference: {fileID: 0}
+    - target: {fileID: 8614520363701876924, guid: 39adb7fba70b62445a4c6dd2e61b9975,
+        type: 3}
+      propertyPath: m_TagString
+      value: Text
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 39adb7fba70b62445a4c6dd2e61b9975, type: 3}
